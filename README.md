@@ -1,4 +1,4 @@
-# 🧬 VCF Genomic Prediction Pipeline & Web Platform
+# VCF Genomic Prediction Pipeline & Web Platform
 
 Welcome to the **VCF Genomic Prediction Pipeline**, an advanced, full-stack bioinformatics application built to analyze human genomic data in the form of Variant Call Format (VCF) files. 
 
@@ -6,7 +6,7 @@ This project aims to bridge the gap between complex genomic data and human-reada
 
 ---
 
-## 🌟 What This Project Does (In Simple Terms)
+## What This Project Does (In Simple Terms)
 
 Imagine downloading a gigantic text file containing all the genetic mutations a person has. It's almost impossible for a doctor to read through millions of mutations to find the *one* causing a rare disease. 
 
@@ -20,7 +20,7 @@ This platform acts as an **AI-powered genetic detective**:
 
 ---
 
-## 🏗️ Project Architecture & Folders
+## Project Architecture & Folders
 
 This repository is split into 4 main areas:
 
@@ -43,7 +43,7 @@ This repository is split into 4 main areas:
 
 ---
 
-## 🔬 How the Pipeline Works: Step-by-Step Deep Dive
+## How the Pipeline Works: Step-by-Step Deep Dive
 
 When you press "Predict" on the frontend, a lot happens in the backend (`app.py`). Here is the journey of your file:
 
@@ -68,7 +68,7 @@ The backend bundles the top 5 predicted diseases, the exact causative variants, 
 
 ---
 
-## ⚙️ How to Setup & Run the Project locally
+## How to Setup & Run the Project locally
 
 Because this project runs heavy genomic tools, you need a few prerequisites installed on your computer (preferably Linux or macOS, or WSL on Windows).
 
@@ -113,7 +113,7 @@ Because this project runs heavy genomic tools, you need a few prerequisites inst
 
 ---
 
-## 🚀 Usage Guide
+## Usage Guide
 
 1. Open your browser and go to the frontend URL (e.g., `http://localhost:5173`).
 2. **Register/Login** to a new account using the UI interface to securely access the platform.
