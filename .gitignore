@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+env/
+.env/
+.venv/
+
+# Node / JS
+node_modules/
+dist/
+build/
+.npm/
+.eslintcache
+
+# Databases
+*.sqlite3
+*.db
+backend/users.db
+backend/users.db-journal
+
+# Models & Huge Data files
+*.pkl
+*.h5
+*.model
+*.vcf
+*.vcf.gz
+*.tbi
+*.xml
+*.jar
+*.csv
+*.zip
+*.pdf
+
+# Specific Folders to Ignore (Huge data outputs / tools)
+Bioinformatics/data/
+Bioinformatics/outputs/
+Bioinformatics/tools/
+model-pipeline/data/
+model-pipeline/outputs/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
