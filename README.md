@@ -33,11 +33,7 @@ This repository is split into 4 main areas:
 - Handles user authentication (login/register via SQLite `users.db`).
 - Contains the `app.py` script which receives the uploaded file and orchestrates the heavy lifting: running terminal tools, executing the AI model, and compiling the final JSON report sent back to the frontend.
 
-### 3. `Bioinformatics/` (The Data Warehouse)
-- Contains the massive external databases and annotation tools necessary for genome processing. 
-- Includes **SnpEff** (to annotate mutations) and mapping data from **Orphanet** (gene-to-disease databases) and **HPO** (disease-to-symptom databases).
-
-### 4. `model-pipeline/` (The AI Laboratory)
+### 3. `model-pipeline/` (The AI Laboratory)
 - Contains Jupyter Notebooks (`.ipynb`) used by Data Scientists to initially build and train the Machine Learning model. 
 - You do *not* need to run these to use the app. They exist to show *how* the AI model `rf_ann_model.pkl` was created using real-world ClinVar data.
 
