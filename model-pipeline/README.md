@@ -312,59 +312,5 @@ java -jar snpEff/snpEff.jar download GRCh38.86
 | **Orphanet** | [orphadata.com](https://www.orphadata.com/) | `disease_gene_associations.xml`, `disease_phenotype.xml` |
 | **HPO** | [hpo.jax.org](https://hpo.jax.org/data/annotations) | `phenotype.hpoa`, `hp.json` |
 
----
 
-## Directory Structure
 
-```
-Bioinformatics/                          # Base Google Drive directory
-├── data/
-│   ├── processed/
-│   │   ├── clinvar_final_annotated.csv  # Training data (ClinVar)
-│   │   └── patient1_annotated.csv       # Parsed patient annotations
-│   └── external/
-│       ├── patient_vcfs/
-│       │   └── patient_rett.vcf         # ← INPUT: Raw patient VCF
-│       ├── orphanet/
-│       │   ├── disease_gene_associations.xml
-│       │   └── disease_phenotype.xml
-│       └── hpo/
-│           ├── phenotype.hpoa
-│           └── hp.json
-├── models/
-│   └── rf_ann_model.pkl                 # Trained model
-├── tools/
-│   └── snpEff/
-│       └── snpEff.jar                   # SnpEff annotation tool
-└── outputs/
-    ├── final/
-    │   ├── confusion_matrix.png         # Model evaluation
-    │   └── roc_curve.png
-    ├── variants/
-    │   ├── patient_final_variants.csv   # All predictions
-    │   └── patient1_top20_pathogenic.csv
-    └── diagnosis/
-        ├── patient1_disease_mapping.csv
-        ├── patient1_symptom_ranked_diseases.csv
-        └── patient_final_clinical_report.pdf  # ← FINAL OUTPUT
-```
-
----
-
-## Quick Start (End-to-End for a New Patient)
-
-```
-1. Place your patient VCF file → data/external/patient_vcfs/
-2. (First time only) Run 03_RF_Model.ipynb to train and save the model
-3. Open 04_patient_file_annotation.ipynb
-   → Update the VCF filename in the "Patient Input File" cell
-   → Run all cells
-4. Open 05_disease_mapping_pipeline.ipynb
-   → (Optional) Update patient_symptom_names list with reported symptoms
-   → Run all cells
-5. Collect outputs from outputs/diagnosis/
-```
-
----
-
-> **Note:** All notebooks are designed to run on **Google Colab** with Google Drive mounted at `/content/drive/MyDrive/Bioinformatics/`. Adjust base paths if running locally.
