@@ -1,10 +1,10 @@
-# 🧬 VCF Genomic Prediction Pipeline
+# VCF Genomic Prediction Pipeline
 
 A complete machine-learning pipeline that takes a raw **patient VCF file** as input and produces **pathogenicity predictions**, **disease mappings**, **symptom-ranked diagnoses**, and a **clinical PDF report** as output.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [Pipeline Overview](#pipeline-overview)
 - [Architecture Diagram](#architecture-diagram)
@@ -187,7 +187,7 @@ Maps predicted **pathogenic variants to diseases** using Orphanet, cross-referen
 
 ### Phase 1 — Model Training (`03_RF_Model.ipynb`)
 
-> ⚠️ **Run once.** After training, the model is saved and reused for all patients.
+> **Run once.** After training, the model is saved and reused for all patients.
 
 | Step | Action | Details |
 |------|--------|---------|
@@ -214,7 +214,7 @@ Categorical (One-Hot Encoded):     Numerical (Passthrough):
 
 ### Phase 2 — Patient VCF Annotation & Prediction (`04_patient_file_annotation.ipynb`)
 
-> 🔄 **Run for each new patient VCF file.**
+> **Run for each new patient VCF file.**
 
 | Step | Action | Details |
 |------|--------|---------|
@@ -242,7 +242,7 @@ ANN=T|missense_variant|MODERATE|MECP2|...|protein_coding|...
 
 ### Phase 3 — Disease Mapping & Symptom Scoring (`05_disease_mapping_pipeline.ipynb`)
 
-> 🔄 **Run after Phase 2 to generate the diagnosis.**
+> **Run after Phase 2 to generate the diagnosis.**
 
 | Step | Action | Details |
 |------|--------|---------|
