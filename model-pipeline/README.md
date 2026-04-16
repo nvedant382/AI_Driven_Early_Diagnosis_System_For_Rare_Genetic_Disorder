@@ -119,24 +119,6 @@ Maps predicted **pathogenic variants to diseases** using Orphanet, cross-referen
 |------|-------------|--------|
 | **Patient VCF file** | The raw variant call format file from genome sequencing | `.vcf` |
 
-### Training Data (Phase 1 only — one-time setup)
-
-| File | Path (in Google Drive) | Description |
-|------|----------------------|-------------|
-| `clinvar_final_annotated.csv` | `data/processed/clinvar_final_annotated.csv` | Pre-processed ClinVar dataset with SnpEff annotations. Contains columns: `CHROM`, `POS`, `REF`, `ALT`, `CLNSIG`, `Effect`, `Impact`, `Transcript_BioType` |
-
-### External Data Sources (Phase 3)
-
-| File | Path (in Google Drive) | Description |
-|------|----------------------|-------------|
-| `disease_gene_associations.xml` | `data/external/orphanet/disease_gene_associations.xml` | Orphanet gene-to-disease association database |
-| `disease_phenotype.xml` | `data/external/orphanet/disease_phenotype.xml` | Orphanet disease-to-phenotype (HPO) mapping |
-| `phenotype.hpoa` | `data/external/hpo/phenotype.hpoa` | HPO annotation file |
-| `hp.json` | `data/external/hpo/hp.json` | HPO ontology JSON (term ID → human-readable name) |
-
----
-
-## Required External Data & Tools
 
 ### System Tools
 
@@ -164,22 +146,6 @@ Maps predicted **pathogenic variants to diseases** using Orphanet, cross-referen
 | File | Path | Description |
 |------|------|-------------|
 | `rf_ann_model.pkl` | `models/rf_ann_model.pkl` | Serialized scikit-learn pipeline (preprocessor + Random Forest) |
-
----
-
-## Output Files
-
-| Phase | Output File | Description |
-|-------|-------------|-------------|
-| **1** | `models/rf_ann_model.pkl` | Trained Random Forest model pipeline |
-| **1** | `outputs/final/confusion_matrix.png` | Confusion matrix visualization |
-| **1** | `outputs/final/roc_curve.png` | ROC curve visualization |
-| **2** | `data/processed/patient1_annotated.csv` | All parsed & annotated patient variants |
-| **2** | `outputs/variants/patient_final_variants.csv` | All variants with pathogenicity predictions & probabilities |
-| **2** | `outputs/variants/patient1_top20_pathogenic.csv` | Top 20 most pathogenic variants ranked by probability |
-| **3** | `outputs/diagnosis/patient1_disease_mapping.csv` | Pathogenic variants mapped to diseases & phenotypes |
-| **3** | `outputs/diagnosis/patient1_symptom_ranked_diseases.csv` | Diseases ranked by symptom overlap + ML probability |
-| **3** | `outputs/diagnosis/patient_final_clinical_report.pdf` | Full clinical genomic diagnosis PDF report |
 
 ---
 
@@ -311,6 +277,3 @@ java -jar snpEff/snpEff.jar download GRCh38.86
 |----------|--------|-------------|
 | **Orphanet** | [orphadata.com](https://www.orphadata.com/) | `disease_gene_associations.xml`, `disease_phenotype.xml` |
 | **HPO** | [hpo.jax.org](https://hpo.jax.org/data/annotations) | `phenotype.hpoa`, `hp.json` |
-
-
-
